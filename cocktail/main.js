@@ -1,4 +1,4 @@
-// Ubicación de la API --> https://www.thecocktaildb.com/api.php
+
 
 
 //objeto json de ejemplo convertido a objeto de javascript
@@ -15,7 +15,8 @@ function init() {
       console.log(data.drinks[0].strImageSource);
       // cambiar página
       var img = document.getElementById("example");
-      img.src= data.drinks[0].strImageSource;
+      img.src= data.drinks[0].strDrinkThumb;
+      console.log(data);
   });
 }
 
