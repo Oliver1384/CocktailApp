@@ -45,7 +45,6 @@ function showAllCocktails(){
   .then(response => response.json())//convierte objeto json a objeto javascript
   .then(data => {
       data.drinks.forEach(element => {
-        console.log(element.strDrinkThumb);
         var img = document.getElementById("gallery");
         let htmlImg = document.createElement("img");
         htmlImg.src= element.strDrinkThumb;
