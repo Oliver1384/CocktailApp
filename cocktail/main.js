@@ -12,7 +12,11 @@ function init() {
 
   var htmlButton2 = document.getElementById("ocultarTodo");
   htmlButton2.addEventListener("click",hideGallery);
+
 }
+
+
+
 
 /**
  * elimina todos los hijos del elemento pasado por parámetro
@@ -72,9 +76,12 @@ function searchCocktail(event){
   fetch(actual)
   .then(response => response.json())//convierte objeto json a objeto javascript
   .then(data => {//añade la imagen al documento
-      var img = document.getElementById("example2");
+      var img = document.getElementById("result");
       img.src= data.drinks[0].strDrinkThumb;
   });
 }
+
+
+
 
 
