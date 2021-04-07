@@ -6,7 +6,9 @@ document.addEventListener("DOMContentLoaded", init);
 function init() {
   var htmlButton = document.getElementById("buscar");
   htmlButton.addEventListener("click",searchCocktail);
-  showAllCocktails();
+
+  var htmlButton2 = document.getElementById("mostrarTodo");
+  htmlButton2.addEventListener("click",showAllCocktails);
 }
 
 /**
