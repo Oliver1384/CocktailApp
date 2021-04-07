@@ -9,8 +9,6 @@ function init() {
  fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita')
   .then(response => response.json())
   .then(data => {
-      console.log(data.drinks[0].strImageSource);
-      // cambiar página
       var img = document.getElementById("example");
       img.src= data.drinks[0].strDrinkThumb;
   });
