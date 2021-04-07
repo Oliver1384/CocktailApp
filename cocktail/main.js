@@ -9,7 +9,29 @@ function init() {
 
   var htmlButton2 = document.getElementById("mostrarTodo");
   htmlButton2.addEventListener("click",showAllCocktails);
+
+  var htmlButton2 = document.getElementById("ocultarTodo");
+  htmlButton2.addEventListener("click",hideGallery);
 }
+
+/**
+ * elimina todos los hijos del elemento pasado por parámetro
+ * @param {Object}
+ */
+function removeAllChilds(element) {
+  while (element.firstChild) {
+      element.removeChild(element.firstChild);
+  }
+}
+
+/**
+ * vacía la galería
+ */
+function hideGallery(){
+  var gallery =document.getElementById("gallery");
+  removeAllChilds(gallery);
+}
+
 
 /**
  * muestra todos los cocktails
