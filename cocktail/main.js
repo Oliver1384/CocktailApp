@@ -1,6 +1,3 @@
-
-
-
 //objeto json de ejemplo convertido a objeto de javascript
 /*var myJSON = '{"name":"John", "age":31, "city":"New York"}';
 var myObj = JSON.parse(myJSON);
@@ -16,7 +13,6 @@ function init() {
       // cambiar página
       var img = document.getElementById("example");
       img.src= data.drinks[0].strDrinkThumb;
-      console.log(data);
   });
 }
 
