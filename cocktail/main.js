@@ -1,7 +1,5 @@
-//objeto json de ejemplo convertido a objeto de javascript
-/*var myJSON = '{"name":"John", "age":31, "city":"New York"}';
-var myObj = JSON.parse(myJSON);
-console.log(this.myObj);*/
+//Ejecuta los elementos contenidos en el init una vez cargada la página
+document.addEventListener("DOMContentLoaded", init);
 
 
 //Busca un cocktail por nombre y devuelve su imagen
@@ -14,7 +12,6 @@ function init() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", init);
 
 
 
