@@ -42,10 +42,24 @@ function hideGallery(){
 
 
 /**
+ * Optiene el valor de busqueda del html
+ * @return  {String}
+ */
+ function actualLetter(){
+  let htmlInput = document.getElementById("busquedaPorLetra");
+  return htmlInput.value;
+}
+
+
+/**
  * muestra todos los cocktails
  */
-function showAllCocktails(){
-  fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a')
+function showAllCocktails(event){
+  event.preventDefault();
+  var actual = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='+actualLetter();
+  var gallery = document.getElementById("gallery");
+  removeAllChilds(gallery);
+  fetch(actual)
   .then(response => response.json())//convierte objeto json a objeto javascript
   .then(data => {
       data.drinks.forEach(element => {
@@ -93,14 +107,6 @@ function showAllNames(event){
   return htmlInput.value;
 }
 
-/**
- * Optiene el valor de busqueda del html
- * @return  {String}
- */
-function actualLetter(){
-  let htmlInput = document.getElementById("busquedaPorLetra");
-  return htmlInput.value;
-}
 
 
 /**
