@@ -13,6 +13,10 @@ function init() {
   var htmlButton2 = document.getElementById("ocultarTodo");
   htmlButton2.addEventListener("click",hideGallery);
 
+
+  var htmlButton3 = document.getElementById("desplegarLista");
+  htmlButton3.addEventListener("click",showAllNames);
+
 }
 
 
@@ -45,10 +49,30 @@ function showAllCocktails(){
   .then(response => response.json())//convierte objeto json a objeto javascript
   .then(data => {
       data.drinks.forEach(element => {
-        var img = document.getElementById("gallery");
+        console.log(element.strDrink);
+        var gallery = document.getElementById("gallery");
+        let htmlActual = document.createElement("div");
+        let htmlNombre = document.createElement("p");
         let htmlImg = document.createElement("img");
         htmlImg.src= element.strDrinkThumb;
-        img.appendChild(htmlImg); 
+        htmlNombre.append(element.strDrink);
+        htmlActual.appendChild(htmlNombre)
+        htmlActual.appendChild(htmlImg)
+        gallery.appendChild(htmlActual); 
+      });
+  });
+}
+
+function showAllNames(){
+  fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a')
+  .then(response => response.json())//convierte objeto json a objeto javascript
+  .then(data => {
+      console.log(data.drinks.strDrink);
+      data.drinks.forEach(element => {
+        var listCocktail = document.getElementById("listCocktail");
+        let htmlLi = document.createElement("li");
+        htmLi.append(element.strDrink);
+        listCocktail.appendChild(htmlLi);
       });
   });
 }
