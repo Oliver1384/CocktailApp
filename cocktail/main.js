@@ -14,7 +14,7 @@ function init() {
   htmlButton2.addEventListener("click",hideGallery);
 
 
-  var htmlButton3 = document.getElementById("desplegarLista");
+  var htmlButton3 = document.getElementById("buscar2");
   htmlButton3.addEventListener("click",showAllNames);
 
 }
@@ -49,7 +49,6 @@ function showAllCocktails(){
   .then(response => response.json())//convierte objeto json a objeto javascript
   .then(data => {
       data.drinks.forEach(element => {
-        console.log(element.strDrink);
         var gallery = document.getElementById("gallery");
         let htmlActual = document.createElement("div");
         let htmlNombre = document.createElement("p");
@@ -63,13 +62,18 @@ function showAllCocktails(){
   });
 }
 
-function showAllNames(){
+
+/**
+ * muestra todos los cócteles con la letra a
+ */
+function showAllNames(event){
+  event.preventDefault();
+  var actual = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='+actualLetter();
   var listCocktail = document.getElementById("listCocktail");
   removeAllChilds(listCocktail);
-  fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a')
+  fetch(actual)
   .then(response => response.json())//convierte objeto json a objeto javascript
   .then(data => {
-      console.log(data.drinks.strDrink);
       data.drinks.forEach(element => {
         var listCocktail = document.getElementById("listCocktail");
         let htmlLi = document.createElement("li");
@@ -89,6 +93,14 @@ function showAllNames(){
   return htmlInput.value;
 }
 
+/**
+ * Optiene el valor de busqueda del html
+ * @return  {String}
+ */
+function actualLetter(){
+  let htmlInput = document.getElementById("busquedaPorLetra");
+  return htmlInput.value;
+}
 
 
 /**
