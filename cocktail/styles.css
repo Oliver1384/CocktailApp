@@ -16,7 +16,7 @@ nav{
     flex-wrap: wrap;
     justify-content: space-around;
     margin-bottom: 2rem;
-    background-color: blueviolet;
+    background-color: rgb(43, 101, 226);
     padding: 1rem;
 }
 #gallery{
