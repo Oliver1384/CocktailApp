@@ -17,8 +17,19 @@ function init() {
   var htmlButton4 = document.getElementById("desplegarLista");
   htmlButton4.addEventListener("click",showAllNames);
 
+  realSerchFirstLetter();
 }
 
+function realSerchFirstLetter(){
+  var actual ='https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a';
+  var gallery = document.getElementById("gallery");
+  removeAllChilds(gallery);
+  fetch(actual)
+  .then(response => response.json())//convierte objeto json a objeto javascript
+  .then(data => {
+      console.log(data);
+  });
+}
 
 
 
@@ -56,7 +67,7 @@ function hideGallery(){
  */
 function showAllCocktails(event){
   event.preventDefault();
-  var actual = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='+actualLetter();
+  var actual = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f='+actualLetter();
   var gallery = document.getElementById("gallery");
   removeAllChilds(gallery);
   fetch(actual)
@@ -82,7 +93,7 @@ function showAllCocktails(event){
  */
 function showAllNames(event){
   event.preventDefault();
-  var actual = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='+actualLetter();
+  var actual = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f='+actualLetter();
   var listCocktail = document.getElementById("listCocktail");
   removeAllChilds(listCocktail);
   fetch(actual)
