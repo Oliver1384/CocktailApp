@@ -13,8 +13,12 @@ body{
 }
 
 #gallery{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
     background-color: brown;
 }
+
 
 form {
     background-color: aqua;
@@ -23,5 +27,6 @@ form {
 }
 
 img{
-    max-width: 20%;
+    max-width: 10rem;
+    margin: 0.5rem
 }
