@@ -10,12 +10,12 @@ function init() {
   var htmlButton2 = document.getElementById("mostrarTodo");
   htmlButton2.addEventListener("click",showAllCocktails);
 
-  var htmlButton2 = document.getElementById("ocultarTodo");
-  htmlButton2.addEventListener("click",hideGallery);
+  var htmlButton3 = document.getElementById("ocultarTodo");
+  htmlButton3.addEventListener("click",hideGallery);
 
 
-  var htmlButton3 = document.getElementById("buscar2");
-  htmlButton3.addEventListener("click",showAllNames);
+  var htmlButton4 = document.getElementById("desplegarLista");
+  htmlButton4.addEventListener("click",showAllNames);
 
 }
 
