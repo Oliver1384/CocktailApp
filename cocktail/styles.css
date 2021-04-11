@@ -47,7 +47,9 @@ ul {
     list-style: none;
 }
 
-li{
-    border: 1px solid black;
-    max-width: 10%;
+
+
+ul{
+  display: grid;  
+  grid-template-columns: 1fr 1fr 1fr;
 }

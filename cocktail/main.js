@@ -64,6 +64,8 @@ function showAllCocktails(){
 }
 
 function showAllNames(){
+  var listCocktail = document.getElementById("listCocktail");
+  removeAllChilds(listCocktail);
   fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a')
   .then(response => response.json())//convierte objeto json a objeto javascript
   .then(data => {
@@ -71,7 +73,7 @@ function showAllNames(){
       data.drinks.forEach(element => {
         var listCocktail = document.getElementById("listCocktail");
         let htmlLi = document.createElement("li");
-        htmLi.append(element.strDrink);
+        htmlLi.append(element.strDrink);
         listCocktail.appendChild(htmlLi);
       });
   });
