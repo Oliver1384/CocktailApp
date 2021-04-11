@@ -75,8 +75,11 @@ function searchCocktail(event){
   fetch(actual)
   .then(response => response.json())//convierte objeto json a objeto javascript
   .then(data => {//añade la imagen al documento
-      var img = document.getElementById("result");
-      img.src= data.drinks[0].strDrinkThumb;
+    var galeria = document.getElementById("gallery");
+    removeAllChilds(galeria);
+    let htmlImg = document.createElement("img");
+    htmlImg.src= data.drinks[0].strDrinkThumb;
+    galeria.appendChild(htmlImg); 
   });
 }
 

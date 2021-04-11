@@ -12,7 +12,15 @@ body{
     margin-top: 1rem;
 }
 
+#gallery{
+    background-color: brown;
+}
 
+form {
+    background-color: aqua;
+    padding: 1rem;
+    max-width: 30%;
+}
 
 img{
     max-width: 20%;
