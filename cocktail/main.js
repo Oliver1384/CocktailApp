@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", init);
 
 
-//Busca un cocktail por nombre y devuelve su imagen
+//Se ejecuta cuando carga el codumento
 function init() {
   var htmlButton = document.getElementById("buscar");
   htmlButton.addEventListener("click",searchCocktail);
