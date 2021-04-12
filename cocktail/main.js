@@ -17,18 +17,19 @@ function init() {
   var htmlButton4 = document.getElementById("desplegarLista");
   htmlButton4.addEventListener("click",showAllNames);
 
-  realSerchFirstLetter();
+
+  var htmlButton5 = document.getElementById("ocultarLista");
+  htmlButton5.addEventListener("click", deleteList);
+
+
 }
 
-function realSerchFirstLetter(){
-  var actual ='https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a';
-  var gallery = document.getElementById("gallery");
-  removeAllChilds(gallery);
-  fetch(actual)
-  .then(response => response.json())//convierte objeto json a objeto javascript
-  .then(data => {
-      console.log(data);
-  });
+/**
+ * limplia los elemento de la lista
+ */
+function deleteList(){
+var listCocktail = document.getElementById("listCocktail");
+removeAllChilds(listCocktail);
 }
 
 
