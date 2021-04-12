@@ -27,9 +27,10 @@ function init() {
 /**
  * limplia los elemento de la lista
  */
-function deleteList(){
-var listCocktail = document.getElementById("listCocktail");
-removeAllChilds(listCocktail);
+function deleteList(event){
+  event.preventDefault();
+  var listCocktail = document.getElementById("listCocktail");
+  removeAllChilds(listCocktail);
 }
 
 
