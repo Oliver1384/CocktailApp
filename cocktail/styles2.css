@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+
+
+*,*::after,*::before{
+	box-sizing: border-box;
+	margin:0;
+	border:0;
+}
+
+body>div{
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+header{
+    width: 100%;
+}
+
+header>h1{
+    font-family: 'Roboto', sans-serif;
+    color: whitesmoke;
+    position: relative;
+    left: .3em;
+    max-width: 90%;
+    
+}
+
+header>h1>i{
+    color: white;
+    font-size: small;
+    position:absolute;
+    top: .5em;
+}
+
+
+body{
+    min-width: 230px;
+    border-radius: 5px;
+    background-color: #9466eb
+}
+nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+    background-color: rgb(43, 101, 226);
+    padding: 1rem;
+}
+
+
+#gallery{
+    display:flex;
+    max-width: 90%;
+    flex-wrap: wrap;
+    margin: 1em auto;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+
+form {
+    background-color: aqua;
+    max-width: 90%;
+    margin: 0 auto;
+    
+}
+
+form > * {
+    margin-top: 0.5rem;
+}
+
+form #ocultarTodo{
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+form div{
+    border: 1px solid black;
+    padding: 0.5rem;
+}
+
+img{
+    max-width: 100%;
+    
+}
+
+
+#gallery>div{
+    display: flex;
+    margin: 1em auto;
+    max-width: 30%;
+    display: flex;
+    flex-direction: column;
+    background-color: rosybrown;
+}
+
+#gallery p{
+    background-color: white;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    background-color: seagreen;
+    
+
+}
+
