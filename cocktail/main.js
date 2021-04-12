@@ -48,7 +48,8 @@ function removeAllChilds(element) {
 /**
  * vacía la galería
  */
-function hideGallery(){
+function hideGallery(event){
+  event.preventDefault();
   var gallery =document.getElementById("gallery");
   removeAllChilds(gallery);
 }
