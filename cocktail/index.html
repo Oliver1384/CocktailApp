@@ -10,37 +10,32 @@
 </head>
 <body>
   <h1>Recetario de cócteles </h1>
-    <nav>
-      <button id="ocultarTodo">Ocultar todos</button>
+    
       <form>
-        Búsqueda de Cocktail: 
-        <input type="search" id="busquedaCocktail">
-        <button id="buscar">Buscar</button>
+        <button id="ocultarTodo">Ocultar todos</button>
+        <div class="porNombre">
+          <h2>Buscar por nombre:</h2>
+          <input type="search" id="busquedaCocktail">
+          <button id="buscar">Buscar</button>
+        </div>
+  
 
-        <div>
-            Búsqueda todos por letra: 
+        <div class="porLetra">
+            <h2>Buscar todos por letra: </h2>
             <input type="search" id="busquedaPorLetra">
-        
-            <button id="mostrarTodo">Mostrar todos por letra</button>
+            <button id="mostrarTodo">Mostrar imagenes</button>
             <button id="desplegarLista">Deplegar Lista por letra</button>
             <button id="ocultarLista">Ocultar lista</button>
         </div>
       </form>
-    </nav>
+   
   
   
 
 
-  <ul id="listCocktail">
-  </ul>
-
-
-
-
+  <ul id="listCocktail"></ul>
   <div id="gallery"></div>
 
-  <footer>
-    
-  </footer>
+  <footer></footer>
 </body>
 </html> 
