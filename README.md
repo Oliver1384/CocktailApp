@@ -13,3 +13,4 @@ Comandos para git por consola:
 
 - git push --> subir mis commits a repositorio en github
 
+- git merge [nombre de la rama que quieres unir] --> se emplea para unir ramas,debemos situarnos en la rama main para emplear este comando. 
