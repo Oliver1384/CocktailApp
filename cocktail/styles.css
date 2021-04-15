@@ -26,12 +26,29 @@ header>h1{
     
 }
 
+@keyframes move{
+    0%{
+        transform: rotate(0);
+    }
+    33%{
+        transform: rotate(10deg);
+    }
+    66%{
+        transform: rotate(-10deg);
+    }
+}
+
 header>h1>i{
     color: white;
     font-size: small;
     position:absolute;
     top: .5em;
+    animation: move 5s infinite;
+    transition: ease-in;
+    
 }
+
+
 
 
 body{
