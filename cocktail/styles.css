@@ -15,20 +15,20 @@ body>div{
 
 header{
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 header>h1{
     font-family: 'Roboto', sans-serif;
     color: whitesmoke;
     position: relative;
-    left: .3em;
-    max-width: 90%;
-    
+    font-size:3rem;
 }
 
 header>h1>i{
     color: white;
-    font-size: small;
+    font-size: medium;
     position:absolute;
     top: .5em;
 }
@@ -52,19 +52,6 @@ body{
       background-position: 0% 50%;
     }
   }
-
-/*
-
-nav{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-bottom: 2rem;
-    background-color: rgb(255, 0, 0);
-    padding: 1rem;
-}
-*/
-
 
 form {
     max-width: 100%;
