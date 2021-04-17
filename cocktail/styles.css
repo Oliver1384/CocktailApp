@@ -25,14 +25,43 @@ header{
     width: 100%;
     display: flex;
     justify-content: center;
+    animation: name 5s;
+    animation-iteration-count:infinite;
+    animation-fill-mode:both;
+    animation-direction: alternate;
 }
+
+@keyframes name{
+    from{
+        text-shadow: 4px 4px 4px rgb(212, 210, 203);
+        scale:0.8;
+    }
+    to{
+        text-shadow: 4px 4px 4px rgb(0, 0, 0);
+    }
+}
+
+@keyframes animacion{
+    from{
+        background-color: rgb(0, 57, 107);
+    }
+    to{
+        text-shadow: rgb(5, 5, 5);
+    }
+}
+
 
 header>h1{
     font-family: 'Roboto', sans-serif;
     color: whitesmoke;
     position: relative;
     font-size:3rem;
+    animation:animacion;
+    animation-iteration-count: infinite;
 }
+
+
+
 
 header>h1>i{
     color: white;
