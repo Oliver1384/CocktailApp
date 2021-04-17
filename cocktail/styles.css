@@ -1,6 +1,14 @@
+/************************************************************************************
+*          All imports                                                              *
+*************************************************************************************/
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
+
+/************************************************************************************
+*          Body and html                                                            *
+*************************************************************************************/
 
 *,*::after,*::before{
 	box-sizing: border-box;
@@ -14,6 +22,10 @@ body{
     border-radius: 5px;
     margin-bottom: 1rem;
     margin-top: 1rem;
+    min-width: 230px;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 800% 800%;
+    animation: gradient 20s ease infinite;
 }
 
 body>div{
@@ -21,6 +33,10 @@ body>div{
     margin: .5em auto;
 }
 
+
+/************************************************************************************
+*          Header                                                                   *
+*************************************************************************************/
 header{
     width: 100%;
     display: flex;
@@ -31,26 +47,6 @@ header{
     animation-direction: alternate;
 }
 
-@keyframes name{
-    from{
-        text-shadow: 4px 4px 4px rgb(212, 210, 203);
-        scale:0.8;
-    }
-    to{
-        text-shadow: 4px 4px 4px rgb(0, 0, 0);
-    }
-}
-
-@keyframes animacion{
-    from{
-        background-color: rgb(0, 57, 107);
-    }
-    to{
-        text-shadow: rgb(5, 5, 5);
-    }
-}
-
-
 header>h1{
     font-family: 'Roboto', sans-serif;
     color: whitesmoke;
@@ -60,9 +56,6 @@ header>h1{
     animation-iteration-count: infinite;
 }
 
-
-
-
 header>h1>i{
     color: white;
     font-size: medium;
@@ -71,25 +64,9 @@ header>h1>i{
 }
 
 
-body{
-    min-width: 230px;
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 800% 800%;
-     animation: gradient 20s ease infinite;
-}
-
-@keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-
+/************************************************************************************
+*          Form                                                                     *
+*************************************************************************************/
 form {
     max-width: 100%;
     margin: 0 auto;
@@ -123,6 +100,10 @@ form div{
 }
 
 
+/************************************************************************************
+*          Gallery and img                                                          *
+*************************************************************************************/
+
 img{
     max-width: 12rem;
     margin: 0.5rem
@@ -154,8 +135,48 @@ img{
     padding: .1em 0;
 }
 
+
+/************************************************************************************
+*          List                                                                     *
+*************************************************************************************/
 ul {
   list-style: none;
   display: grid;  
   grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+/************************************************************************************
+*          All keyframes                                                            *
+*************************************************************************************/
+
+@keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+@keyframes name{
+    from{
+        text-shadow: 4px 4px 4px rgb(212, 210, 203);
+        scale:0.8;
+    }
+    to{
+        text-shadow: 4px 4px 4px rgb(0, 0, 0);
+    }
+}
+
+@keyframes animacion{
+    from{
+        background-color: rgb(0, 57, 107);
+    }
+    to{
+        text-shadow: rgb(5, 5, 5);
+    }
 }
