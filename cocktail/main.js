@@ -63,7 +63,7 @@ function init() {
 
 
 /**
- * muestra todos los cócteles en galería
+ * muestra todos los cócteles en la lista
  */
  function showAllCocktailsInList(event){
   event.preventDefault();
