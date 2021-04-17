@@ -23,8 +23,11 @@ function init() {
   var htmlButton5 = document.getElementById("ocultarLista");
   htmlButton5.addEventListener("click", deleteList);
 
-  var htmlButton5 = document.getElementById("mostrarTodos");
-  htmlButton5.addEventListener("click", showAllCocktailsInGallery);
+  var htmlButton6 = document.getElementById("mostrarTodosG");
+  htmlButton6.addEventListener("click", showAllCocktailsInGallery);
+
+  var htmlButton7 = document.getElementById("mostrarTodosL");
+  htmlButton7.addEventListener("click", showAllCocktailsInList);
 }
 
 
@@ -34,6 +37,8 @@ function init() {
  function showAllCocktailsInGallery(event){
   event.preventDefault();
   var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','w','x','y','z'];
+  var gallery = document.getElementById("gallery");
+  removeAllChilds(gallery);
   alphabet.forEach(value => {
     event.preventDefault();
     var actual = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f='+value;
@@ -55,6 +60,31 @@ function init() {
     });
   });
 }
+
+
+/**
+ * muestra todos los cócteles en galería
+ */
+ function showAllCocktailsInList(event){
+  event.preventDefault();
+  var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','w','x','y','z'];
+  var listCocktail = document.getElementById("listCocktail");
+  removeAllChilds(listCocktail);
+  alphabet.forEach(value =>{
+    var actual = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f='+value;
+    fetch(actual)
+    .then(response => response.json())//convierte objeto json a objeto javascript
+    .then(data => {
+        data.drinks.forEach(element => {
+          var listCocktail = document.getElementById("listCocktail");
+          let htmlLi = document.createElement("li");
+          htmlLi.append(element.strDrink);
+          listCocktail.appendChild(htmlLi);
+        });
+    });
+  });
+}
+
 
 
 /**
