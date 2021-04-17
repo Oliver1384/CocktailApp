@@ -2,13 +2,15 @@
 document.addEventListener("DOMContentLoaded", init);
 
 
+
+
 //Se ejecuta cuando carga el codumento
 function init() {
   var htmlButton = document.getElementById("buscar");
   htmlButton.addEventListener("click",searchCocktail);
 
   var htmlButton2 = document.getElementById("mostrarTodo");
-  htmlButton2.addEventListener("click",showAllCocktails);
+  htmlButton2.addEventListener("click",showAllCocktailsByLetter);
 
   var htmlButton3 = document.getElementById("ocultarTodo");
   htmlButton3.addEventListener("click",hideGallery);
@@ -21,8 +23,39 @@ function init() {
   var htmlButton5 = document.getElementById("ocultarLista");
   htmlButton5.addEventListener("click", deleteList);
 
-
+  var htmlButton5 = document.getElementById("mostrarTodos");
+  htmlButton5.addEventListener("click", showAllCocktailsInGallery);
 }
+
+
+/**
+ * muestra todos los cócteles en galería
+ */
+ function showAllCocktailsInGallery(event){
+  event.preventDefault();
+  var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','w','x','y','z'];
+  alphabet.forEach(value => {
+    event.preventDefault();
+    var actual = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f='+value;
+    fetch(actual)
+    .then(response => response.json())//convierte objeto json a objeto javascript
+    .then(data => {
+        data.drinks.forEach(element => {
+          var gallery = document.getElementById("gallery");
+          let htmlActual = document.createElement("div");
+          let htmlNombre = document.createElement("p");
+          let htmlImg = document.createElement("img");
+          htmlImg.src= element.strDrinkThumb;
+          htmlNombre.append(element.strDrink);
+          htmlActual.appendChild(htmlNombre)
+          htmlActual.appendChild(htmlImg)
+          gallery.appendChild(htmlActual); 
+      
+        });
+    });
+  });
+}
+
 
 /**
  * limplia los elemento de la lista
@@ -68,7 +101,7 @@ function hideGallery(event){
 /**
  * muestra todos los cocktails
  */
-function showAllCocktails(event){
+function showAllCocktailsByLetter(event){
   event.preventDefault();
   var actual = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f='+actualLetter();
   var gallery = document.getElementById("gallery");
