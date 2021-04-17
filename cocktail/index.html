@@ -6,17 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="main.js"></script>
-    <title>Cocktail</title>
+    <title>Cocktails</title>
+    <script src="https://kit.fontawesome.com/50a1627f8e.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="/icon.png">
 </head>
 <body>
-  <header>Recetario de cócteles</header>
+  <div class="wrapper">
+  <header>
+    <h1>Cocktail.io<i class="fas fa-cocktail"></i></h1>
+  </header>
     
       <form>
-        <button id="ocultarTodo">Ocultar galería</button>
         <div class="porNombre">
           <p>Buscar por nombre:</p>
           <input type="search" id="busquedaCocktail">
           <button id="buscar">Buscar</button>
+          <button id="ocultarTodo">Ocultar galería</button>
         </div>
   
         <div class="porLetra">
@@ -35,5 +40,7 @@
   <div id="gallery"></div>
 
   <footer></footer>
+
+</div>
 </body>
 </html> 
