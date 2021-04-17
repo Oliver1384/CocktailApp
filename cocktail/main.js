@@ -129,16 +129,24 @@ function showAllNames(event){
  */
 function searchCocktail(event){
   event.preventDefault();
-  var actual = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='+actualCocktail();
-  fetch(actual)
-  .then(response => response.json())//convierte objeto json a objeto javascript
-  .then(data => {//añade la imagen al documento
+  if (actualCocktail()!=""){
+    var actual = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='+actualCocktail();
+    fetch(actual)
+    .then(response => response.json())//convierte objeto json a objeto javascript
+    .then(data => {//añade la imagen al documento
+      var galeria = document.getElementById("gallery");
+      removeAllChilds(galeria);
+      let htmlImg = document.createElement("img");
+      htmlImg.src= data.drinks[0].strDrinkThumb;
+      galeria.appendChild(htmlImg); 
+    });
+  } else {  
     var galeria = document.getElementById("gallery");
     removeAllChilds(galeria);
-    let htmlImg = document.createElement("img");
-    htmlImg.src= data.drinks[0].strDrinkThumb;
-    galeria.appendChild(htmlImg); 
-  });
+    let htmlP = document.createElement("p");
+    htmlP.textContent="Indique un nombre";
+    galeria.appendChild(htmlP); 
+  }
 }
 
 
