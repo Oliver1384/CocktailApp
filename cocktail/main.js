@@ -36,7 +36,7 @@ function init() {
  */
  function showAllCocktailsInGallery(event){
   event.preventDefault();
-  var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','w','x','y','z'];
+  var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','v','w','x','y','z'];
   var gallery = document.getElementById("gallery");
   removeAllChilds(gallery);
   alphabet.forEach(value => {
@@ -67,7 +67,7 @@ function init() {
  */
  function showAllCocktailsInList(event){
   event.preventDefault();
-  var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','w','x','y','z'];
+  var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','v','w','x','y','z'];
   var listCocktail = document.getElementById("listCocktail");
   removeAllChilds(listCocktail);
   alphabet.forEach(value =>{
