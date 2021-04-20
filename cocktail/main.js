@@ -144,8 +144,12 @@ function searchCocktail(event){
     var galeria = document.getElementById("gallery");
     removeAllChilds(galeria);
     let htmlImg = document.createElement("img");
+    let htmlNombre = document.createElement("p");
+    htmlNombre.append(actualCocktail());
     htmlImg.src= data.drinks[0].strDrinkThumb;
     galeria.appendChild(htmlImg); 
+    galeria.appendChild(htmlNombre);
+
   });
 }
 
