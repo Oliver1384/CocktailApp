@@ -21,18 +21,24 @@ function init() {
   var htmlButton5 = document.getElementById("ocultarLista");
   htmlButton5.addEventListener("click", deleteList);
 
+  var htmlButton6 = document.getElementById("conAlcohol");
+  htmlButton6.addEventListener("click", showDrinks('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic'));
+
+  var htmlButton7 = document.getElementById("sinAlcohol");
+  htmlButton7.addEventListener("click", showDrinks('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic'));
+  
 
 }
 
 /**
  * limplia los elemento de la lista
  */
+
 function deleteList(event){
   event.preventDefault();
   var listCocktail = document.getElementById("listCocktail");
   removeAllChilds(listCocktail);
 }
-
 
 
 /**
@@ -68,6 +74,8 @@ function hideGallery(event){
 /**
  * muestra todos los cocktails
  */
+
+
 function showAllCocktails(event){
   event.preventDefault();
   var actual = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f='+actualLetter();
@@ -91,7 +99,7 @@ function showAllCocktails(event){
 }
 
 
-/**
+/**showNoAlcoholicDrinks
  * muestra todos los cócteles con la letra a
  */
 function showAllNames(event){
@@ -140,6 +148,44 @@ function searchCocktail(event){
     galeria.appendChild(htmlImg); 
   });
 }
+
+function showDrinks(url){
+  return event => {
+  event.preventDefault();
+  var actual = url;
+  var listCocktail = document.getElementById("gallery");
+  removeAllChilds(listCocktail);
+  fetch(actual)
+  .then(response => response.json())//convierte objeto json a objeto javascript
+  .then(data => {
+      data.drinks.forEach(element => {
+        var gallery = document.getElementById("gallery");
+        let htmlActual = document.createElement("div");
+        let htmlNombre = document.createElement("p");
+        let htmlImg = document.createElement("img");
+        htmlImg.src= element.strDrinkThumb;
+        htmlNombre.append(element.strDrink);
+        htmlActual.appendChild(htmlNombre)
+        htmlActual.appendChild(htmlImg)
+        gallery.appendChild(htmlActual); 
+      
+      });
+  });
+}
+}
+
+/*
+function showAlcoholicDrinks(event, url){
+  showDrinks(event, 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic');
+  
+}
+
+function showNoAlcoholicDrinks(event){
+  showDrinks(event, 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic');
+}
+
+*/
+
 
 
 
