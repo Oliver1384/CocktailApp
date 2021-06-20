@@ -3,7 +3,7 @@
 *************************************************************************************/
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@300&display=swap');
 
 
 /************************************************************************************
@@ -25,6 +25,7 @@
 @keyframes name{
     from{
         text-shadow: 4px 4px 4px rgb(212, 210, 203);
+        scale:0.8;
     }
     to{
         text-shadow: 4px 4px 4px rgb(0, 0, 0);
@@ -54,18 +55,27 @@
 body{
     max-width: 1024px;
     margin: 0 auto;
-    border-radius: 5px;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
     min-width: 230px;
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 800% 800%;
     animation: gradient 15s ease infinite;
+    /*position: relative;*/
 }
 
 body>div{
     max-width: 95%;
     margin: .5em auto;
+}
+
+body>div>ul{
+    background-color: rgba(255, 255,255, .5);
+    margin: .5em 0;
+    border-radius: .2em;
+}
+
+body>div li{
+    font-family: 'Roboto', sans-serif;
+    margin: .4em 0;
 }
 
 
@@ -115,6 +125,9 @@ form > * {
 form input{
     border: solid .2em black;
     border-radius: .2em;
+    width: 100%;
+    padding: .3em 0;
+    
 }
 
 form button{
@@ -122,7 +135,14 @@ form button{
     color: white;
     border-radius: .2em;
     padding: .3em;
+    margin: .5em .2em;
 }
+
+form button:active{
+    background-color: #c57af1;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.281);
+}
+
 
 form #ocultarTodo{
     font-family: 'Roboto', sans-serif;
@@ -140,35 +160,53 @@ form div{
 *************************************************************************************/
 
 img{
-    max-width: 12rem;
-    margin: 0.5rem
+    max-width: 100%;
 }
 
 
 #gallery{
     display:flex;
     flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 2rem;
+    justify-content: space-around;
+    margin-top: 2em;
     background-color: rgba(255, 255, 255, 1);
     border-radius: .5em;
+    padding: 1em 0;
 }
 
+#gallery>img{
+    max-width: 50%;
+    display: block;
+
+}
+
+
 #gallery > div{
-    margin: 1rem;
+    max-width: 40%;
+    border: 0px solid black;
+
 }
 
 
 #gallery p{
     background-color: white;
     text-align: center;
-    font-family: 'Courgette', cursive;
-    font-size: 1.5rem;
+    font-family: 'Antonio', sans-serif;
+    font-size: 1rem;
     border: .1em solid black;
     border-width: .1em .1em 0 .1em ;
-    border-radius: 1em 1em 0 0;
+    border-radius: .4em .4em 0 0;
     padding: .1em 0;
+    max-height: 17%;
 }
+
+
+#gallery>p{
+    width: 100%;
+    font-size: 1.4rem;
+    border: 0 solid black;
+}
+
 
 
 /************************************************************************************
@@ -180,5 +218,144 @@ ul {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
+/************************************************************************************
+*          Footer                                                                    *
+*************************************************************************************/
+
+footer{
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    margin: 1em 0;
+}
+
+footer > section:first-of-type{
+    display: flex;
+    justify-content: space-around;
+    padding: .5em 0;
 
 
+}
+
+footer > section:first-of-type > article{
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    text-align: center;
+
+}
+
+footer > section:first-of-type > article > i{
+    font-size: 2rem;
+    color: white;
+    padding: .5em;
+    border-radius: 50%;
+    margin: .2em 0;
+}
+
+footer > section:first-of-type > article:first-of-type > i{
+    background-color: rgb(107, 207, 120);
+
+}
+
+footer > section:first-of-type > article:nth-of-type(2) > i{
+    background-color: plum;
+}
+
+footer > section:first-of-type > article:nth-of-type(3) > i{
+    background-color: rgb(160, 221, 221);
+}
+
+footer > section:last-of-type{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+}
+
+footer > section:last-of-type p{
+    border: 1px solid #575757;
+    padding: .3em 1em;
+    margin: .5em 0;
+    border-radius: .3em;
+    color: /************************************************************************************
+    *          Footer                                                                    *
+    *************************************************************************************/
+    #575757;
+    text-align: center;
+}
+
+footer > section:last-of-type p:hover{
+    background-color: #575757;
+    color: white;
+}
+
+footer > section:last-of-type p:hover i{
+    background-color: white;
+    color:#575757;
+}
+
+
+footer > section:last-of-type i{
+     font-size:1.5em;
+     color: white;
+     background-color: #575757;
+     border-radius: 50%;
+     padding: .2em;
+}
+
+footer > section:last-of-type a{
+    text-decoration: none;
+    color: black;
+}
+
+
+/************************************************************************************
+*          Media Querys                                                                    *
+*************************************************************************************/
+
+
+@media(min-width: 1024px){
+    
+    form{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .porNombre{
+        width: 30%;
+    }
+
+    .porNombre input{
+        width: 100%;
+        
+    }
+
+    form input{
+        width: 25%;
+    }
+
+    .porLetra {
+        width: 30%;
+        text-align: center;
+    }
+
+    .porLetra input{
+        width: 100%;
+    }
+
+    .byAlcohol{
+        width: 30%;
+        
+        text-align: center;
+    }
+
+    #gallery > div{
+        max-width: 20%;
+        margin: .2em;
+    }
+}
