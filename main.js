@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", init);
 
 
-//Se ejecuta cuando carga el codumento
+//Se ejecuta cuando carga el codumento (Disparadores)
 function init() {
   var htmlButton = document.getElementById("buscar");
   htmlButton.addEventListener("click",searchCocktail);
@@ -30,10 +30,10 @@ function init() {
 
 }
 
+
 /**
  * limplia los elemento de la lista
  */
-
 function deleteList(event){
   event.preventDefault();
   var listCocktail = document.getElementById("listCocktail");
@@ -50,6 +50,7 @@ function removeAllChilds(element) {
       element.removeChild(element.firstChild);
   }
 }
+
 
 /**
  * vacía la galería
@@ -74,8 +75,6 @@ function hideGallery(event){
 /**
  * muestra todos los cocktails
  */
-
-
 function showAllCocktails(event){
   event.preventDefault();
   var actual = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f='+actualLetter();
@@ -130,7 +129,6 @@ function showAllNames(event){
 }
 
 
-
 /**
  * busca y devuelve el objeto 
  * @return  {Object}
@@ -153,6 +151,12 @@ function searchCocktail(event){
   });
 }
 
+
+/**
+ * Carga en la página las imágenes de bebidas con o sin alcohol dependiendo de la 
+ * url pasada por parámetro
+ * @param {*} url 
+ */
 function showDrinks(url){
   return event => {
   event.preventDefault();
@@ -160,7 +164,7 @@ function showDrinks(url){
   var listCocktail = document.getElementById("gallery");
   removeAllChilds(listCocktail);
   fetch(actual)
-  .then(response => response.json())//convierte objeto json a objeto javascript
+  .then(response => response.json())
   .then(data => {
       data.drinks.forEach(element => {
         var gallery = document.getElementById("gallery");
@@ -175,20 +179,8 @@ function showDrinks(url){
       
       });
   });
+  }
 }
-}
-
-/*
-function showAlcoholicDrinks(event, url){
-  showDrinks(event, 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic');
-  
-}
-
-function showNoAlcoholicDrinks(event){
-  showDrinks(event, 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic');
-}
-
-*/
 
 
 
