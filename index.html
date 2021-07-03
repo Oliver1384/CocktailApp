@@ -9,25 +9,24 @@
     <script src="main.js"></script>
     <title>Cocktails</title>
     <script src="https://kit.fontawesome.com/50a1627f8e.js" crossorigin="anonymous"></script>
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="max-w-screen-lg  m-auto min-w-230">
-  <div class="">
-  <header class="flex justify-center">
-    <h1 class="text-5xl">Cocktail.io<i class="fas fa-cocktail"></i></h1>
+<body>
+  <div>
+  <header>
+    <h1>Cocktail.io<i class="fas fa-cocktail"></i></h1>
   </header>
     
       <form>
         <div class="porNombre">
           <p>Buscar por nombre:</p>
-          <input class="rounded w-full" type="search" id="busquedaCocktail">
+          <input type="search" id="busquedaCocktail">
           <button id="buscar">Buscar</button>
           <button id="ocultarTodo">Ocultar galería</button>
         </div>
   
         <div class="porLetra">
             <p>Buscar todos por letra: </p>
-            <input class="rounded w-full" type="search" id="busquedaPorLetra">
+            <input  type="search" id="busquedaPorLetra">
             <button id="mostrarTodo">Mostrar imagenes</button>
             <button id="desplegarLista">Deplegar lista</button>
             <button id="ocultarLista">Ocultar lista</button>
@@ -41,7 +40,7 @@
    
   
 
-  <ul id="listCocktail" class="bg-opacity-50 bg-white"></ul>
+  <ul id="listCocktail" ></ul>
 
   <div id="gallery"></div>
 
