@@ -201,7 +201,7 @@ ul {
   list-style: none;
   display: grid;  
   grid-template-columns: 1fr 1fr 1fr;
-  background-color: rgba(155, 147, 147, 0.377);
+  background-color: rgba(238, 238, 238, 0.377);
   margin: 0 auto;
   max-width: 95%;
   border-radius: .5rem;
