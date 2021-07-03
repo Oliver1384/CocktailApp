@@ -139,13 +139,12 @@ function searchCocktail(event){
   fetch(actual)
   .then(response => response.json())//convierte objeto json a objeto javascript
   .then(data => {//añade la imagen al documento
-    console.log(data);
     var galeria = document.getElementById("gallery");
     removeAllChilds(galeria);
     data.drinks.forEach(value => {
       let htmlImg = document.createElement("img");
       let htmlNombre = document.createElement("p");
-      htmlNombre.append(actualCocktail());
+      htmlNombre.append(value.strDrink);
       htmlImg.src= value.strDrinkThumb;
       galeria.appendChild(htmlImg); 
       galeria.appendChild(htmlNombre);
