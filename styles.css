@@ -217,7 +217,7 @@ footer{
     font-family: 'Roboto', sans-serif;
     margin-top: .5rem;
     border-radius: .5em;
-    border: solid 1rem rgb(189, 176, 176);  
+    border: solid 1rem rgba(189, 176, 176, 0.473);  
     margin: 0 auto;
 }
 

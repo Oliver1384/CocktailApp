@@ -144,10 +144,12 @@ function searchCocktail(event){
     data.drinks.forEach(value => {
       let htmlImg = document.createElement("img");
       let htmlNombre = document.createElement("p");
+      let htmlDiv = document.createElement("div");
       htmlNombre.append(value.strDrink);
       htmlImg.src= value.strDrinkThumb;
-      galeria.appendChild(htmlImg); 
-      galeria.appendChild(htmlNombre);
+      htmlDiv.appendChild(htmlNombre);
+      htmlDiv.appendChild(htmlImg);
+      galeria.appendChild(htmlDiv); 
     });
   });
 }
