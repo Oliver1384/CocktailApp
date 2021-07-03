@@ -148,6 +148,7 @@ img{
     margin-top: 2em;
     background-color: rgba(255, 255, 255, 1);
     border-radius: .5em;
+    margin-bottom: 1rem;
 }
 
 #gallery>img{
@@ -200,11 +201,13 @@ ul {
 
 footer{
     background-color: white;
-    width: 100%;
+    width: 90%;
     flex-direction: column;
     font-family: 'Roboto', sans-serif;
     margin-top: .5rem;
     border-radius: .5em;
+    border: solid 1rem rgb(189, 176, 176);  
+    margin: 0 auto;
 }
 
 
