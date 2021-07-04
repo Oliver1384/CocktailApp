@@ -192,7 +192,8 @@ img{
   grid-template-columns: 1fr 1fr 1fr;
   background-color: rgba(238, 238, 238, 0.377);
   margin: 0 auto;    
-  border: solid 2px black;
+  margin-top: 1rem;
+  border-radius: .5rem;
 }
 
 /************************************************************************************
