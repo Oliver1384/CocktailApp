@@ -101,7 +101,6 @@ function showAllCocktails(event){
           var htmlLi = document.createElement("li");
           htmlLi.append(value);
           htmlIngredients.appendChild(htmlLi);
-          console.log(value);
         }
         htmlActual.appendChild(htmlIngredients);
       });
@@ -204,7 +203,6 @@ function searchCocktail(event){
           var htmlLi = document.createElement("li");
           htmlLi.append(value);
           htmlIngredients.appendChild(htmlLi);
-          console.log(value);
         }
         htmlDiv.appendChild(htmlIngredients);
       });
