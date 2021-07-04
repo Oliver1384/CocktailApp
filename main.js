@@ -81,21 +81,35 @@ function showAllCocktails(event){
   var gallery = document.getElementById("gallery");
   removeAllChilds(gallery);
   fetch(actual)
-  .then(response => response.json())//convierte objeto json a objeto javascript
+  .then(response => response.json())
   .then(data => {
       data.drinks.forEach(element => {
         var gallery = document.getElementById("gallery");
         let htmlActual = document.createElement("div");
+        htmlActual.className="cocktail";
         let htmlNombre = document.createElement("p");
         let htmlImg = document.createElement("img");
         htmlImg.src= element.strDrinkThumb;
         htmlNombre.append(element.strDrink);
         htmlActual.appendChild(htmlNombre)
         htmlActual.appendChild(htmlImg)
-        gallery.appendChild(htmlActual); 
+        let htmlIngredients = document.createElement("ul");
+        htmlIngredients.className = "ingredients";
+        let ingredients = getIngredients(element);
+        ingredients.forEach(value => {
+        if (value != null) {
+          var htmlLi = document.createElement("li");
+          htmlLi.append(value);
+          htmlIngredients.appendChild(htmlLi);
+          console.log(value);
+        }
+        htmlActual.appendChild(htmlIngredients);
+      });
+      gallery.appendChild(htmlActual); 
       });
   });
 }
+
 
 
 /**showNoAlcoholicDrinks
@@ -130,37 +144,11 @@ function showAllNames(event){
 
 
 /**
- * busca y devuelve el objeto 
- * @return  {Object}
- */
-function searchCocktail(event){
-  event.preventDefault();
-  var actual = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='+actualCocktail();
-  fetch(actual)
-  .then(response => response.json())//convierte objeto json a objeto javascript
-  .then(data => {//añade la imagen al documento
-    var galeria = document.getElementById("gallery");
-    removeAllChilds(galeria);
-    data.drinks.forEach(value => {
-      let htmlImg = document.createElement("img");
-      let htmlNombre = document.createElement("p");
-      let htmlDiv = document.createElement("div");
-      htmlNombre.append(value.strDrink);
-      htmlImg.src= value.strDrinkThumb;
-      htmlDiv.appendChild(htmlNombre);
-      htmlDiv.appendChild(htmlImg);
-      galeria.appendChild(htmlDiv); 
-    });
-  });
-}
-
-
-/**
  * Carga en la página las imágenes de bebidas con o sin alcohol dependiendo de la 
  * url pasada por parámetro
  * @param {*} url 
  */
-function showDrinks(url){
+ function showDrinks(url){
   return event => {
   event.preventDefault();
   var actual = url;
@@ -186,7 +174,68 @@ function showDrinks(url){
 }
 
 
+/**
+ * busca y devuelve el objeto 
+ * @return  {Object}
+ */
+function searchCocktail(event){
+  event.preventDefault();
+  var actual = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='+actualCocktail();
+  fetch(actual)
+  .then(response => response.json())//convierte objeto json a objeto javascript
+  .then(data => {//añade la imagen al documento
+    var galeria = document.getElementById("gallery");
+    removeAllChilds(galeria);
+    data.drinks.forEach(value => {
+      let htmlImg = document.createElement("img");
+      let htmlNombre = document.createElement("p");
+      let htmlDiv = document.createElement("div");
+      htmlDiv.className="cocktail";
+      htmlNombre.append(value.strDrink);
+      htmlImg.src= value.strDrinkThumb;
+      htmlDiv.appendChild(htmlNombre);
+      htmlDiv.appendChild(htmlImg);
+      galeria.appendChild(htmlDiv); 
+      let htmlIngredients = document.createElement("ul");
+      htmlIngredients.className = "ingredients";
+      let ingredients = getIngredients(value);
+      ingredients.forEach(value => {
+        if (value != null) {
+          var htmlLi = document.createElement("li");
+          htmlLi.append(value);
+          htmlIngredients.appendChild(htmlLi);
+          console.log(value);
+        }
+        htmlDiv.appendChild(htmlIngredients);
+      });
+    });
+  });
+}
 
 
+/**
+ * Return an array with ingredients
+ * @param {*} object 
+ * @returns []
+ */
+function getIngredients(object) {
+  var result = [];
+  result[0] = object.strIngredient1;
+  result[1] = object.strIngredient2;
+  result[2] = object.strIngredient3;
+  result[3] = object.strIngredient4;
+  result[4] = object.strIngredient5;
+  result[5] = object.strIngredient6;
+  result[6] = object.strIngredient7;
+  result[7] = object.strIngredient8;
+  result[8] = object.strIngredient9;
+  result[9] = object.strIngredient10;
+  result[10] = object.strIngredient11;
+  result[11] = object.strIngredient12;
+  result[12] = object.strIngredient13;
+  result[13] = object.strIngredient14;
+  result[14] = object.strIngredient15;
+  return result;
+}
 
 
